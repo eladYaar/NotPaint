@@ -6,11 +6,13 @@ body {
 #advancedOptionsDiv {
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 5px;
+}
+#advancedOptionsDiv span, #advancedOptionsDiv input {
+    margin: 5px;
 }
 #advancedButton {
-    max-width: fit-content;
-    justify-self: center;
+    margin: 5px;
 }
 #myCanvas {
     border: 2px black solid;
@@ -29,6 +31,7 @@ h1 {
     justify-content: space-around;
     width: fit-content;
     justify-self: center;
+    flex-wrap: wrap;
 }
 
 #buttonDiv button {
