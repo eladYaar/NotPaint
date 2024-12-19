@@ -25,8 +25,6 @@ function mark() {
     ctx.beginPath();
 }
 
-
-
 function changeLineWidth(lineWidth,lineWidthButton) {
     if (!lineWidthButton.classList.contains("selectedButton")) {
         lineWidthButton.classList.add("selectedButton");
