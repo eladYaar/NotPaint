@@ -10,21 +10,21 @@
     <body>
         <h1>Not Paint</h1>
         <div id="buttonDiv">
-            <button id="black" onclick="changeLineColor(this.id)"></button>
-            <button id="red" onclick="changeLineColor(this.id)"></button>
-            <button id="green" onclick="changeLineColor(this.id)"></button>
-            <button id="blue" onclick="changeLineColor(this.id)"></button>
-            <button id="yellow" onclick="changeLineColor(this.id)"></button>
-            <button id="magenta" onclick="changeLineColor(this.id)"></button>
-            <button id="cyan" onclick="changeLineColor(this.id)"></button>
-            <button id="randomColor" onclick="changeLineColor()"></button>
-            <button onclick="changeLineWidth(1)">1</button>
-            <button onclick="changeLineWidth(2)">2</button>
-            <button onclick="changeLineWidth(3)">3</button>
-            <button onclick="changeLineWidth(4)">4</button>
-            <button onclick="changeLineWidth(5)">5</button>
-            <button onclick="changeLineWidth(6)">6</button>
-            <button onclick="changeLineWidth(7)">7</button>
+            <button id="black" class="selectedButton" onclick="changeLineColor(this)"></button>
+            <button id="red" class="unselectedButton" onclick="changeLineColor(this)"></button>
+            <button id="green" onclick="changeLineColor(this)"></button>
+            <button id="blue" onclick="changeLineColor(this)"></button>
+            <button id="yellow" onclick="changeLineColor(this)"></button>
+            <button id="magenta" onclick="changeLineColor(this)"></button>
+            <button id="cyan" onclick="changeLineColor(this)"></button>
+            <button id="randomColor" onclick="changeLineColor(this)"></button>
+            <button id="width1" class="selectedButton" onclick="changeLineWidth(1)">1</button>
+            <button id="width2" onclick="changeLineWidth(2,this)">2</button>
+            <button id="width3" onclick="changeLineWidth(3,this)">3</button>
+            <button id="width4" onclick="changeLineWidth(4,this)">4</button>
+            <button id="width5" onclick="changeLineWidth(5,this)">5</button>
+            <button id="width6" onclick="changeLineWidth(6,this)">6</button>
+            <button id="width7" onclick="changeLineWidth(7,this)">7</button>
             <button id="clearButton" onclick="clearCanvas()"></button>
             <br>
         </div>
@@ -40,7 +40,7 @@
         </div>
         <br>
         <canvas id="myCanvas" width="1000" height="600" onmousedown="mark()"
-        onmouseenter="mark()" onmousemove=" (event)"></canvas>
+        onmouseenter="mark()" onmousemove="paint(event)"></canvas>
         <br>
     </body>
     </html>

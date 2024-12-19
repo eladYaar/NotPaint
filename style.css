@@ -3,24 +3,31 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 #advancedOptionsDiv {
     justify-content: center;
     align-items: center;
     padding: 5px;
 }
-#advancedOptionsDiv span, #advancedOptionsDiv input {
+
+#advancedOptionsDiv span,
+#advancedOptionsDiv input {
     margin: 5px;
 }
+
 #advancedButton {
     margin: 5px;
 }
+
 #myCanvas {
     border: 2px black solid;
     justify-self: center;
 }
+
 h1 {
     text-align: center;
 }
+
 .hidden {
     display: none;
 }
@@ -78,3 +85,9 @@ h1 {
     background-image: url(assets/images/eraser.png);
     background-size: contain;
 }
+
+.selectedButton {
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+}
+

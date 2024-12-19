@@ -3,9 +3,12 @@
 /**@type{HTMLCanvasElement} */
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
-let currentLineColor = "black";
+const defaultColorButton = document.getElementById("black")
+const defaultWidthButton = document.getElementById("width1")
+let currentLineColor = defaultColorButton.id;
 let currentLineWidth = 1;
-
+let selectedColorButton = defaultColorButton;
+let selectedWidthButton = defaultWidthButton;
 function paint(/**@type{MouseEvent}*/ event) {
     if (event.buttons === 1) {
         const rect = myCanvas.getBoundingClientRect();
@@ -24,12 +27,27 @@ function mark() {
 
 
 
-function changeLineWidth(lineWidth) {
+function changeLineWidth(lineWidth,lineWidthButton) {
+    if (!lineWidthButton.classList.contains("selectedButton")) {
+        lineWidthButton.classList.add("selectedButton");
+        lineWidthButton.classList.remove("unselectedButton");
+        selectedWidthButton.classList.remove("selectedButton");
+        selectedWidthButton.classList.add("unselectedButton")
+        selectedWidthButton = lineWidthButton;
+    }
     currentLineWidth = lineWidth;
 }
 
-function changeLineColor(color = "") {
-    if (!color) {
+function changeLineColor(colorButton) {
+    let color = colorButton.id
+    if (!colorButton.classList.contains("selectedButton")) {
+        colorButton.classList.add("selectedButton");
+        colorButton.classList.remove("unselectedButton");
+        selectedColorButton.classList.remove("selectedButton");
+        selectedColorButton.classList.add("unselectedButton")
+        selectedColorButton = colorButton;
+    }
+    if (color === "randomColor") {
         switch (getRandNum()) {
             case 1:
                 color = "black"
@@ -53,7 +71,8 @@ function changeLineColor(color = "") {
                 color = "cyan"
                 break;
         }
-    }
+        colorButton.style.border = `2px solid ${color}`
+    } 
     currentLineColor = color;
     return;
 }   
