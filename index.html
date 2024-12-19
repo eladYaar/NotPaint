@@ -11,21 +11,21 @@
     <body>
         <h1>Not Paint</h1>
         <div id="buttonDiv">
-            <button id="black" class="selectedButton" onclick="changeLineColor(this)"></button>
-            <button id="red" class="unselectedButton" onclick="changeLineColor(this)"></button>
-            <button id="green" onclick="changeLineColor(this)"></button>
-            <button id="blue" onclick="changeLineColor(this)"></button>
-            <button id="yellow" onclick="changeLineColor(this)"></button>
-            <button id="magenta" onclick="changeLineColor(this)"></button>
-            <button id="cyan" onclick="changeLineColor(this)"></button>
+            <button value="#000000" id="black" class="selectedButton" onclick="changeLineColor(this)"></button>
+            <button value="#FF0000" id="red" onclick="changeLineColor(this)"></button>
+            <button value="#00FF00" id="green" onclick="changeLineColor(this)"></button>
+            <button value="#0000FF" id="blue" onclick="changeLineColor(this)"></button>
+            <button value="#FFFF00" id="yellow" onclick="changeLineColor(this)"></button>
+            <button value="#FF00FF" id="magenta" onclick="changeLineColor(this)"></button>
+            <button value="#00FFFF" id="cyan" onclick="changeLineColor(this)"></button>
             <button id="randomColor" onclick="changeLineColor(this)"></button>
-            <button id="width1" class="selectedButton" onclick="changeLineWidth(1,this)">1</button>
-            <button id="width2" onclick="changeLineWidth(2,this)">2</button>
-            <button id="width3" onclick="changeLineWidth(3,this)">3</button>
-            <button id="width4" onclick="changeLineWidth(4,this)">4</button>
-            <button id="width5" onclick="changeLineWidth(5,this)">5</button>
-            <button id="width6" onclick="changeLineWidth(6,this)">6</button>
-            <button id="width7" onclick="changeLineWidth(7,this)">7</button>
+            <button id="width1" value="1" class="selectedButton" onclick="changeLineWidth(this)">1</button>
+            <button id="width2" value="2" onclick="changeLineWidth(this)">2</button>
+            <button id="width3" value="3" onclick="changeLineWidth(this)">3</button>
+            <button id="width4" value="4" onclick="changeLineWidth(this)">4</button>
+            <button id="width5" value="5" onclick="changeLineWidth(this)">5</button>
+            <button id="width6" value="6" onclick="changeLineWidth(this)">6</button>
+            <button id="width7" value="7" onclick="changeLineWidth(this)">7</button>
             <button id="clearButton" onclick="clearCanvas()"></button>
             <br>
         </div>
@@ -34,9 +34,9 @@
         <br>
         <div id="advancedOptionsDiv" class="hidden">
             <span>Color</span>
-            <input type="color" onchange="changeLineColor(this,true)">
+            <input id="advancedColorButton" type="color" onchange="changeLineColor(this,true)">
             <span>Line Width</span>
-            <input type="number" min="1" step="1" max="30" value="1" onchange="changeLineWidth(this.value,this)">
+            <input id="advancedLineWidthButton" type="number" min="1" step="1" max="30" value="1" onchange="changeLineWidth(this.value,this)">
             <br>
         </div>
         <br>
