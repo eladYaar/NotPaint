@@ -34,9 +34,9 @@
         <br>
         <div id="advancedOptionsDiv" class="hidden">
             <span>Color</span>
-            <input type="color" onchange="changeLineColor(this.value)">
+            <input type="color" onchange="changeLineColor(this,true)">
             <span>Line Width</span>
-            <input type="number" min="1" step="1" max="30" value="1" onchange="changeLineWidth(this.value)">
+            <input type="number" min="1" step="1" max="30" value="1" onchange="changeLineWidth(this.value,this)">
             <br>
         </div>
         <br>

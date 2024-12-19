@@ -36,13 +36,18 @@ function changeLineWidth(lineWidth,lineWidthButton) {
     currentLineWidth = lineWidth;
 }
 
-function changeLineColor(colorButton) {
-    let color = colorButton.id
+function changeLineColor(colorButton,adv = false) {
+    let color;
+    if(adv) {
+         color = colorButton.value;
+    } else {
+        color = colorButton.id;
+    }
     if (!colorButton.classList.contains("selectedButton")) {
         colorButton.classList.add("selectedButton");
         colorButton.classList.remove("unselectedButton");
         selectedColorButton.classList.remove("selectedButton");
-        selectedColorButton.classList.add("unselectedButton")
+        selectedColorButton.classList.add("unselectedButton");
         selectedColorButton = colorButton;
     }
     if (color === "randomColor") {
